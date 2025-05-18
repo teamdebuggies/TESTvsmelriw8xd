@@ -1,0 +1,10 @@
+graph TD
+    A[VPC] -->|Subnets| B[Public Subnet]
+    A -->|Subnets| C[Private Subnet]
+    B -->|Internet Gateway| D[Internet]
+    C -->|NAT Gateway| E[External Services]
+    C -->|Load Balancer| F[Application Load Balancer]
+    F -->|EC2| G[Microservices]
+    F -->|RDS| H[Database]
+    G -->|IAM| I[Role Based Access Control]
+    I -->|Policies| J[Security Groups]
